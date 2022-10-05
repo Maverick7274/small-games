@@ -10,3 +10,4 @@ This game is a simple version of the classic game Pong. The user plays against t
 This game is a simple version of the classic game Memory. The user plays against the computer. The user can choose to play again or quit the game. The whole game is written in HTML, CSS, and JavaScript.
 ## Game 4 : Whack A Mole
 This game is a simple version of the classic game Whack A Mole. The user plays against the computer. The user can choose to play again or quit the game. The whole game is written in HTML, CSS, and JavaScript.
+# Game 5 : Fighting Game
