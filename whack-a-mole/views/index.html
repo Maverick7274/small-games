@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../stylesheet/style.css">
+    <title>Whack A Mole</title>
+</head>
+<body>
+
+    <!-- Main Game -->
+
+    <div id="stats">
+        <h3 class="label">Your Score :</h3>
+            <h3 id="score">0</h3>
+            <h3 class="label">Time-Left :</h3>
+            <h3 id="time-left">60</h3>
+        </div>
+    </div>
+    <div id="display_wamgame">
+        <div id="grid_wamgame">
+            <div class="square" id="1"></div>
+            <div class="square" id="2"></div>
+            <div class="square" id="3"></div>
+            <div class="square" id="4"></div>
+            <div class="square" id="5"></div>
+            <div class="square" id="6"></div>
+            <div class="square" id="7"></div>
+            <div class="square" id="8"></div>
+            <div class="square" id="9"></div>
+        </div>
+    </div>
+
+        <style>
+                #ques-change
+    {
+        display: flex;
+        justify-content: center;
+
+    }
+    
+    #ques-change a
+    {
+        border-radius:4px ;
+        background: var(--accent_color);
+        margin: 14px 0 5px 5px;
+        padding: 20px;
+        text-decoration: none;
+        color: var(--Supplementary_color);
+    }
+    #ques-change a:hover
+    {
+        background: var(--accent_color1);
+        color: var(--Supplementary_color1);
+    }
+        </style>
+        <script>
+                    const menuToggle = document.querySelector('.menuToggle');
+        const nav = document.querySelector('.nav');
+        menuToggle.onclick = function(){
+            nav.classList.toggle('open')
+        }
+
+        const list = document.querySelectorAll(".nav_list");
+            function activeLink()
+            {
+                list.forEach((item) =>
+                item.classList.remove(('active')));
+                this.classList.add('active');
+            }
+            list.forEach((item) =>
+            item.addEventListener('click', activeLink))
+        </script>
+        <script src="../JavaScript/app.js"></script>
+</body>
+</html>
