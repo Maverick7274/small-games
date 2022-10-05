@@ -1,0 +1,323 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+
+:root
+{
+
+    --Primary_color : #022237;
+    --Primary_color1 : #02223766;
+    --Supplementary_color : #fefefe;
+    --Supplementary_color1 : #fefefe66;
+    --accent_color : #e23c4b;
+    --accent_color1 : #e23c4a66;
+    user-select: none;
+}
+
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    background: var(--Primary_color);
+    font-family: 'Lato', sans-serif;
+    color: var(--Supplementary_color);
+}
+
+/* Nav Bar */
+
+.nav
+{
+    position: fixed;
+    inset: 20px 0 20px 20px;
+    width: 75px;
+    background: var(--Supplementary_color);
+    transition: 0.5s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.nav.open
+{
+    width: 250px;
+}
+
+.nav .menuToggle
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    border-bottom: 1px solid rgba(0,0,0,0.25);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 23px;
+}
+
+.nav .menuToggle::before
+{
+    content: '';
+    position: absolute;
+    width:30px;
+    height: 2px;
+    background: var(--Primary_color);
+    transform: translateY(-8px);
+    transition: 0.5s;
+
+}
+
+.nav.open .menuToggle::before
+{
+    transform: translateY(0px) rotate(45deg);
+}
+
+.nav .menuToggle::after
+{
+    content: '';
+    position: absolute;
+    width:30px;
+    height: 2px;
+    background: var(--Primary_color);
+    transform: translateY(8px);
+    transition: 0.5s;
+    box-shadow: 0 -8px 0 var(--Primary_color);
+}
+
+.nav.open .menuToggle::after
+{
+    transform: translateY(0px) rotate(-45deg);
+    box-shadow: 0 0 0 var(--Primary_color);
+}
+
+
+#stats
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+#stats .time
+{
+    padding-left: 70px;
+}
+
+.nav ul 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
+.nav ul li
+{
+    list-style: none;
+    position: relative;
+    width: 100%;
+    height: 60px;
+    padding: 0 10px;
+    transition: 0.5s;
+}
+.nav ul li:last-child
+{
+    padding-top: 260px;
+}
+
+.nav ul li.active
+{
+    transform: translateX(30px);
+}
+.nav.open ul li.active
+{
+    transform: translateX(10px);
+}
+
+.nav ul li a
+{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: var(--Primary_color);
+}
+
+.nav ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 55px;
+    height: 55px;
+    line-height: 60px;
+    border-radius: 10px;
+    font-size: 1.75rem;
+    transition: 0.5s;
+}
+
+
+.nav ul li.active a .icon
+{
+    background: var(--clr);
+    color: var(--Supplementary_color);
+}
+
+.nav ul li a .icon::before
+{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--clr);
+    filter: blur(8px);
+    opacity: 0;
+    transition: 0.5s;    
+}
+
+.nav ul li.active a .icon::before
+{
+    opacity: 0.5;
+}
+.nav ul li a .text
+{
+    position: relative;
+    padding: 0 15px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: var(--Primary_color);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.5s;
+}
+
+.nav.open ul li a .text
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav ul li.active a .text
+{
+    color: var(--clr);
+}
+
+/* Main Game */
+
+#display_memorygame
+{
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#grid_memorygame
+{
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+
+/* Modal */
+
+    /* The Modal (background) */
+    .modal {
+        display: none; /* Hidden by default */
+        position: fixed; /* Stay in place */
+        z-index: 1; /* Sit on top */
+        left: 0;
+        top: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        overflow: auto; /* Enable scroll if needed */
+        background-color: rgb(0,0,0); /* Fallback color */
+        background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+      }
+      
+      /* Modal Content/Box */
+      .modal-content-correct {
+          background-color: #fefefe;
+          margin: 15% auto; /* 15% from the top and centered */
+          padding: 20px;
+          border: 1px solid #888;
+          width: 80%; /* Could be more or less, depending on screen size */
+      }
+      
+      
+      .modal-content-correct p{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          color: var(--Primary_color);
+      }
+      
+      /* The Close Button */
+      .close {
+        color: #aaa;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+        padding: 2px 0;
+      }
+      
+      .close:hover,
+      .close:focus {
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+      }
+    
+    #ques-change
+    {
+        display: flex;
+        justify-content: center;
+
+    }
+    
+    #ques-change a
+    {
+        border-radius:4px ;
+        background: var(--accent_color);
+        margin: 14px 0 5px 5px;
+        padding: 20px;
+        text-decoration: none;
+        color: var(--Supplementary_color);
+    }
+    #ques-change a:hover
+    {
+        background: var(--accent_color1);
+        color: var(--Supplementary_color1);
+    }
+
+    #stats
+    {
+        background: var(--accent_color);
+        width: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+    }
+    
+    #stats .label
+    {
+        font-size: 1.4rem;
+        padding: 23px;
+    }
