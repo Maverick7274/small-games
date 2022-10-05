@@ -116,6 +116,25 @@ header > h1
     filter: drop-shadow(1px 1px 100px #fff555);
 }
 
+
+.show
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.userInput.rock, .paper, .scissors
+{
+    transform: rotate(90deg);
+}
+
+.rock, .paper, .scissors
+{
+    width:90px
+}
+
+
 #action-message
 {
     font-size: 30px;
