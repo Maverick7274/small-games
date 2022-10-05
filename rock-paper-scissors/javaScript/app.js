@@ -30,7 +30,7 @@ function lose(userChoice, computerChoice){
     computerScore++;
 
     result_div.innerHTML = userChoice + " beats " + computerChoice + ", Computer Win!"
-    console.log(computerScore)
+    computerScore_span.innerHTML = computerScore
     console.log("USER LOSES, COMPUTER WINS")
 }
 function draw(userChoice, computerChoice){
