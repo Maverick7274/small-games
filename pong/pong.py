@@ -94,7 +94,7 @@ wn.onkeypress(paddle_b_down, "k")
 
 
 # Main Game Loop
-while True:
+while score_a < 3 and score_b < 3:
     wn.update()
 
     # Move the ball
